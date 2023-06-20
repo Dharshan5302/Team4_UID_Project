@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Cuisine list</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:brown;
+}
+
+.slider{
+  position: relative;
+  background: #000116;
+  width: 800px;
+  min-height: 500px;
+  margin: 20px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.slider .slide{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip-path: circle(0% at 0 50%);
+}
+
+.slider .slide.active{
+  clip-path: circle(150% at 0 50%);
+  transition: 2s;
+}
+
+.slider .slide img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slider .slide .info{
+  position: absolute;
+  color: #222;
+  background: rgba(255, 255, 255, 0.3);
+  width: 75%;
+  margin-top: 50px;
+  margin-left: 50px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 5px 25px rgb(1 1 1 / 5%);
+}
+
+.slider .slide .info h2{
+  font-size: 2em;
+  font-weight: 800;
+}
+
+.slider .slide .info p{
+  font-size: 1em;
+  font-weight: 400;
+}
+
+.navigation{
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  opacity: 0.5;
+  transition: opacity 0.5s ease;
+}
+
+.slider:hover .navigation{
+  opacity: 1;
+}
+
+.prev-btn, .next-btn{
+  z-index: 999;
+  font-size: 2em;
+  color: #222;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  cursor: pointer;
+}
+
+.prev-btn{
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.next-btn{
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.navigation-visibility{
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+}
+
+.navigation-visibility .slide-icon{
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.5);
+  width: 20px;
+  height: 10px;
+  transform: translateY(-50px);
+  margin: 0 6px;
+  border-radius: 2px;
+  box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
+}
+
+.navigation-visibility .slide-icon.active{
+  background: #4285F4;
+}
+
+@media (max-width: 900px){
+  .slider{
+    width: 100%;
+  }
+
+  .slider .slide .info{
+    position: relative;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 500px){
+  .slider .slide .info h2{
+    font-size: 1.8em;
+    line-height: 40px;
+  }
+
+  .slider .slide .info p{
+    font-size: 0.9em;
+  }
+}
+    </style>
+  </head>
+  <body>
+
+    <div class="slider">
+      <div class="slide active">
+        <a href="south_indian_recipe.html"><img src="https://sukhis.com/app/uploads/2022/09/image3-5-900x601-1.jpg" alt=""></a>
+        <div class="info">
+          <h2>South Indian Cuisine</h2>
+        </div>
+      </div>
+      <div class="slide">
+        <a href="north_indian_recipe.html"><img src="https://curlytales.com/wp-content/uploads/2019/08/Kapoors-Cafe.jpg" alt=""></a>
+        <div class="info">
+          <h2>North Indian Cuisine</h2>
+        </div>
+      </div>
+      <div class="slide">
+        <a href="chinese_recipe.html"><img src="https://img.freepik.com/premium-photo/schezwan-noodles-vegetable-hakka-noodles-chow-mein-is-popular-indo-chinese-recipes-served-bowl-plate-with-wooden-chopsticks-selective-focus_466689-33207.jpg" alt=""></a>
+        <div class="info">
+          <h2>Chinese Cuisine</h2>
+        </div>
+      </div>
+      <div class="slide">
+        <a href="japanese_recipe.html"><img src="https://imgk.timesnownews.com/story/sushi.gif" alt=""></a>
+        <div class="info">
+          <h2>Japanese Cuisine</h2>
+        </div>
+      </div>
+      <div class="navigation">
+        <i class="fas fa-chevron-left prev-btn"></i>
+        <i class="fas fa-chevron-right next-btn"></i>
+      </div>
+      <div class="navigation-visibility">
+        <div class="slide-icon active"></div>
+        <div class="slide-icon"></div>
+        <div class="slide-icon"></div>
+        <div class="slide-icon"></div>
+      </div>
+    </div>
+    <script type="text/javascript">
+        const slider = document.querySelector(".slider");
+        const nextBtn = document.querySelector(".next-btn");
+        const prevBtn = document.querySelector(".prev-btn");
+        const slides = document.querySelectorAll(".slide");
+        const slideIcons = document.querySelectorAll(".slide-icon");
+        const numberOfSlides = slides.length;
+        var slideNumber = 0;
+        var slideInterval;
+      
+        // Function to show the next slide
+        const showNextSlide = () => {
+          slides.forEach((slide) => {
+            slide.classList.remove("active");
+          });
+          slideIcons.forEach((slideIcon) => {
+            slideIcon.classList.remove("active");
+          });
+      
+          slideNumber++;
+      
+          if (slideNumber > numberOfSlides - 1) {
+            slideNumber = 0;
+          }
+      
+          slides[slideNumber].classList.add("active");
+          slideIcons[slideNumber].classList.add("active");
+        };
+      
+        // Function to start the slider autoplay
+        const startSliderAutoplay = () => {
+          slideInterval = setInterval(showNextSlide, 3000); // 2 minutes (2 minutes * 60 seconds * 1000 milliseconds)
+        };
+      
+        // Function to stop the slider autoplay
+        const stopSliderAutoplay = () => {
+          clearInterval(slideInterval);
+        };
+      
+        // Event listener for next button click
+        nextBtn.addEventListener("click", () => {
+          showNextSlide();
+          stopSliderAutoplay();
+          startSliderAutoplay();
+        });
+      
+        // Event listener for previous button click
+        prevBtn.addEventListener("click", () => {
+          slides.forEach((slide) => {
+            slide.classList.remove("active");
+          });
+          slideIcons.forEach((slideIcon) => {
+            slideIcon.classList.remove("active");
+          });
+      
+          slideNumber--;
+      
+          if (slideNumber < 0) {
+            slideNumber = numberOfSlides - 1;
+          }
+      
+          slides[slideNumber].classList.add("active");
+          slideIcons[slideNumber].classList.add("active");
+      
+          stopSliderAutoplay();
+          startSliderAutoplay();
+        });
+      
+        // Start the slider autoplay initially
+        startSliderAutoplay();
+      
+        // Stop the slider autoplay on slider hover
+        slider.addEventListener("mouseover", stopSliderAutoplay);
+      
+        // Restart the slider autoplay on slider mouseout
+        slider.addEventListener("mouseout", startSliderAutoplay);
+      </script>
+</body>
+</html>

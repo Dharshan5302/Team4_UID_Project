@@ -1,0 +1,55 @@
+#cname
+{
+	height: 300px;
+	width: 400px;
+	border-radius: 10px;
+	margin-top: 50px;
+	margin-left: 200px;
+	margin-right: 100px;
+}
+
+.center {
+  	margin-left: auto;
+  	margin-right: auto;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 26%;
+  color: black;
+  font-size: 20px;
+  font-weight: bolder;
+  transform: translate(-50%, -50%);
+}
+body
+{
+	background-image: url("https://www.google.com/imgres?imgurl=https%3A%2F%2Fesmmweighless.com%2Fwp-content%2Fuploads%2F2019%2F12%2FCarolyn-Cooking-Blog.jpg&tbnid=mV3f_7dzbhyezM&vet=12ahUKEwioldyDuZr_AhUwi9gFHcm-DPwQMygAegUIARDhAQ..i&imgrefurl=https%3A%2F%2Fesmmweighless.com%2Ffive-essential-rules-of-cooking%2F&docid=OObN3wNIwSo2WM&w=3949&h=2633&q=cooking&ved=2ahUKEwioldyDuZr_AhUwi9gFHcm-DPwQMygAegUIARDhAQ");
+	}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+}
+
+.overlay {
+  position: absolute; 
+  bottom: 0; 
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1; 
+  width: 100%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.container:hover .overlay 
+{
+  opacity: 1;
+}
+

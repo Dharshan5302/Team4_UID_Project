@@ -1,0 +1,71 @@
+body
+{
+	color: yellow;
+	background-attachment: fixed;
+	background-size: 500px;
+	background-repeat: repeat;
+}
+
+#iheading
+{
+	font-size: 60px;
+	color: darkblue;
+	font-weight: bolder;
+	padding-left: 20px;
+}
+
+ul
+{
+	font-size: 30px;
+	font-style: italic	;
+	color: red;
+	padding-left: 90px;
+	list-style-type: circle;
+	line-height: 70px;
+
+}
+
+ol
+{
+	font-size: 30px;
+	font-style: italic	;
+	color: red;
+	padding-left: 90px;
+}
+
+ol li
+{
+	line-height: 50px;
+}
+#box
+{
+	margin: 50px;
+	background-color: lightgray;
+	color: lightgray;
+	border-radius: 3px;
+	border-style: dashed;
+	width: 90%;
+	opacity: 0.8;
+	font-weight: bolder;	
+	/*background-image: url("https://kitchenambition.b-cdn.net/wp-content/uploads/2021/09/cooking-ingredients.jpg");
+	background: repeat-y;*/
+}
+
+#box1
+{
+	margin-top: 100px;
+	margin-left: 10%;
+	margin-right: 40px;
+	background-color: lightgray;
+	border-radius: 10px;
+	border-color: black;
+	border-style: dashed;
+	width: 70%;
+	opacity: 0.8;
+	font-weight: bolder;
+	font-style: italic;
+	/*background-image: url("https://kitchenambition.b-cdn.net/wp-content/uploads/2021/09/cooking-ingredients.jpg");
+	background: repeat-y;*/
+	 ;
+}
+

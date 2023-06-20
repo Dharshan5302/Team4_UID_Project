@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="addtocart.css">
+        <link rel="stylesheet" type="text/css" href="header_new.html">
+        <script src="https://kit.fontawesome.com/92d70a2fd8.js" cross origin="anonymous"></script>
+    </head>
+    <body>
+        <div class="nav">
+            <a onclick="history.back()">Back</a>
+            <a href="book_or_recipe.html" class="active">home</a>
+            <a href="about.html">About us</a>
+            <a href="addtocart.html">Orderbook</a>
+            <a href="feedback.html">Feedback</a>
+            <img src="salad.png" style="float:right; height: 50px; width: 50px;"/> 
+        </div>
+        <div class="header">
+            <p class="logo">Recipe books</p>
+            <div class="cart"><i class="fa-solid fa-cart-shopping"></i><p id="count">0</p></div>
+        </div>
+        <div class="container">
+            <div id="root"></div>
+            <div class="sidebar">
+                <div class="head"><p>My Cart</p></div>
+                <div id="cartitem">Your cart is empty</div>
+                <div class="foot">
+                    <h3>Total</h3>
+                    <h2 id="total">$ 0.00</h2>
+                    <br>
+                    <div>
+                    <button type="submit" class="btn" onclick="window.location.href='addtocart2.html'">Confirm</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <script src="addtocart.js"></script>
+    </body>
+</html>
