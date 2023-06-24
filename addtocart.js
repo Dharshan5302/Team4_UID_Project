@@ -47,7 +47,7 @@ const product = [
         id: 8,
         image: 'https://1.bp.blogspot.com/-uYMV04rh-Sg/XpXAwkx-PkI/AAAAAAAAK9w/mE9YnHG-z6QL1VBgUCCJNvDoH6yZWUY4ACLcBGAsYHQ/s1600/91Yx-ps-eoL.jpg',
         title: 'Easy Chineese Cookbook',
-        price: 2.5,
+        price: 2,
     },
     {
         id: 9,
