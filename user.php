@@ -25,15 +25,18 @@
             <div class="row">
                 <div class="col m-auto">
                     <div class="card mt-5">
-                        <table border="1" class="table table-bordered">
+                        <table border="1" class="table table-bordered" style="padding:10px; font-size:35px">
 							<caption>Personal Detalis</caption>
+							<br><br>
                             <tr>
-                                <td> Name </td>
-                                <td> Email </td>
-                                <td> Phone_number </td>
-                                <td> DOB </td>
-								<td> Username </td>
-								<td> Password </td>
+							
+                                <th> Name </th>
+                                <th> Email </th>
+                                <th> Phone_number </th>
+                                <th> DOB </th>
+								<th> Username </th>
+								<th> Password </th>
+							
                                
                             </tr>
 
